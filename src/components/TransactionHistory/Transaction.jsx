@@ -1,24 +1,23 @@
 import css from './Transaction.module.css';
 import PropTypes from 'prop-types';
-import clsx from 'clsx';
 
 export const TransactionHistory = ({ item }) => {
   return (
     <table className={css['transaction-history']}>
-      <thead className={css.head}>
-        <tr className={css.head__wrapper}>
-          <th className={css.head__item}>Type</th>
-          <th className={css.head__item}>Amount</th>
-          <th className={css.head__item}>Currency</th>
+      <thead className={css.title}>
+        <tr className={css.title__wrapper}>
+          <th className={css.title__item}>Type</th>
+          <th className={css.title__item}>Amount</th>
+          <th className={css.title__item}>Currency</th>
         </tr>
       </thead>
-      <tbody className={css.body}>
+      <tbody className={css.content}>
         {item.map(({ id, type, amount, currency }) => {
           return (
-            <tr key={id} className={css.body__wrapper}>
-              <td className={css.body__item}>{type}</td>
-              <td className={css.body__item}>{amount}</td>
-              <td className={css.body__item}>{currency}</td>
+            <tr key={id} className={css.content__wrapper}>
+              <td className={css.content__item}>{type}</td>
+              <td className={css.content__item}>{amount}</td>
+              <td className={css.content__item}>{currency}</td>
             </tr>
           );
         })}
@@ -32,7 +31,7 @@ TransactionHistory.propTypes = {
     PropTypes.exact({
       id: PropTypes.string,
       type: PropTypes.string,
-      amount: PropTypes.number,
+      amount: PropTypes.string,
       currency: PropTypes.string,
     }).isRequired
   ),

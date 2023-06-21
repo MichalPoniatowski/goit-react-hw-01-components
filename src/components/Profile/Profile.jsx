@@ -8,7 +8,6 @@ export const Profile = ({
   avatar,
   stats: { followers, views, likes },
 }) => {
-  console.log('KOMPONENT');
   return (
     <div className={css.profile}>
       <div className={css.description}>
